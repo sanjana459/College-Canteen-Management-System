@@ -12,6 +12,6 @@ http://localhost/phpmyadmin
 
 5. Create a database in the name "jss_canteen"
 
-6. Click on the import tabs in the phpmyadmin and import the sql file from c:/xampp/htdocs directory
+6. Click on the import tab in phpmyadmin and import the sql file from c:/xampp/htdocs directory
 
 7. Once the sql file is imported, open a new tab in the same web browser to call the url "http://localhost/JSS_Canteen_Main/". for admin page use the url- "http://localhost/JSS_Canteen_Main/admin/"
