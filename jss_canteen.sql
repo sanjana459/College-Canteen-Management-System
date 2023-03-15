@@ -32,15 +32,6 @@ END$$
 
 DELIMITER ;
 
-CREATE TABLE `logs`(
-  `l_id` int(11) NOT NULL,
-  `c_id` int(11) NOT NULL,
-  `action` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_date` datetime NOT NULL
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-
-
 
 CREATE TABLE `cart` (
   `ct_id` int(11) NOT NULL,
@@ -243,9 +234,6 @@ ALTER TABLE `order_header`
 ALTER TABLE `shop`
   ADD PRIMARY KEY (`s_id`);
 
-ALTER TABLE `logs` 
-ADD PRIMARY KEY(`l_id`);
---
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
@@ -308,9 +296,6 @@ ALTER TABLE `order_header`
   ADD CONSTRAINT `fk_c_orh` FOREIGN KEY (`c_id`) REFERENCES `customer` (`c_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_s_orh` FOREIGN KEY (`s_id`) REFERENCES `shop` (`s_id`) ON DELETE CASCADE;
 
-CREATE TRIGGER `insertLog` AFTER INSERT ON `customer` FOR EACH ROW INSERT INTO logs VALUES(null, NEW.c_id, 'Inserted', NOW());
-CREATE TRIGGER `updateLog` AFTER UPDATE ON `customer` FOR EACH ROW INSERT INTO logs VALUES(null, NEW.c_id, 'Updated', NOW());
-CREATE TRIGGER `deleteLog` BEFORE DELETE ON `customer` FOR EACH ROW INSERT INTO logs VALUES(null, OLD.c_id, 'Deleted', NOW());
 
 COMMIT;
 
