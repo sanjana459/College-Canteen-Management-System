@@ -1,5 +1,5 @@
 # College-Canteen-Management-System
-this is a web based canteen management system application project
+This is a web based canteen management system application project
 
 1. Navigate to XAMPP in your system or simply launch it by clicking the XAMPP Creating MySQL Database with XAMPP Icon. The Control Panel is now visible and can be used to initiate or halt the working of any module.
 
